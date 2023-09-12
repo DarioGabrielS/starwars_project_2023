@@ -5,6 +5,6 @@ module.exports = {
         return characters
     },
     create: async ()=>{
-        return "personaje creado"
+        throw Error ( err.message )
     }
 }
