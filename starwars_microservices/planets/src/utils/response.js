@@ -1,6 +1,6 @@
 module.exports = (res,statusCode, data)=>{
 
-    res.status(statusCode=401).json({
+    res.status(statusCode).json({
         error: false,
         data,
     })

@@ -7,11 +7,7 @@ const server = express()
 server.use(morgan("dev"))
 server.use(express.json())
 
-server.use('/character', router)
-
-server.use('*', (req, res)=>{
-    res.status(404).send('Not Found')
-})
+server.use('/characters', router)
 
 server.use((err,req,res,next)=>{
     res.status(err.statusCode || 500).send({
@@ -19,5 +15,8 @@ server.use((err,req,res,next)=>{
         message: err.message
     })
 
+})
+server.use('*', (req, res)=>{
+    res.status(404).send('Not Found')
 })
 module.exports=server

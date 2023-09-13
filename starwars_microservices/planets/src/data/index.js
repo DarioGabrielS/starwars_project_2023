@@ -5,6 +5,6 @@ module.exports = {
         return planets
     },
     create: async()=>{
-        
+        console.log('Planet created')
     }
 }
