@@ -8,10 +8,7 @@ const planetSchema = new Schema({
     climate: String,
     gravity: String,
     terrain: String,
-    surface_water:{
-        type:String,
-        enum:['unknown','yes','no']
-    },
+    surface_water:String,
     residents:[String],
     films:[{
         type: String,
