@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const  { MONGO_URI }  = require('../config/envs')
+const  { MONGO_URI }  = require('../config/envs.js')
 
-const conn = mongoose.createConnection( MONGO_URI )
+const conn = mongoose.createConnection('mongodb+srv://admin:admin@myatlasclusteredu.lr3of2a.mongodb.net/starwars' )
 
 
 module.exports={
