@@ -28,4 +28,17 @@ const characterSchema = new Schema({
     }]
 })
 
+characterSchema.statics.list = async function () {
+    return await this.find()
+    .populate('films', ["_id","title"])
+    .populate('homeworld', ['_id','name'])
+}
+characterSchema.statics.get = async function (id) {
+    return await this.findById(id)
+    .populate('films', ["_id","title"])
+    .populate('homeworld', ['_id','name'])
+}
+characterSchema.statics.insert = async function (character) {
+    return await this.create(character)
+}
 module.exports= characterSchema
