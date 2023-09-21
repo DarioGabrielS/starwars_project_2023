@@ -10,8 +10,9 @@ server.use(morgan("dev"))
 
 server.get('/:model', validateModel, async (req,res)=>{
     const { model } = req.params
+    console.log('entre a la ruta')
     const response = await store[model].list()
-    res.status(200).json(response)
+    res.status(200).json(response) 
 })
 server.get('/:model/:id', validateModel, async (req,res)=>{
     const { model, id } = req.params
